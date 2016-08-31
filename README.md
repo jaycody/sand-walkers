@@ -1,6 +1,6 @@
 # Sand Walkers
 
-![img](/img/img.png?raw=true "img")
+![img](/img/img.jpg?raw=true "img")
 
 ## Requires
 

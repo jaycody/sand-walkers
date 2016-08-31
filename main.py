@@ -3,7 +3,7 @@
 
 
 BACK = [1,1,1,1]
-FRONT = [0,0,0,0.0001]
+FRONT = [0,0,0,0.001]
 
 SIZE = 1400
 ONE = 1./SIZE
@@ -11,7 +11,7 @@ EDGE = 0.05
 
 GAMMA = 1.4
 
-GRAINS = 20
+GRAINS = 5
 
 NOISE_SCALE = 0.00001
 
