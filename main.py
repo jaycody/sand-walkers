@@ -3,7 +3,7 @@
 
 
 BACK = [1,1,1,1]
-FRONT = [0,0,0,0.001]
+FRONT = [0,0,0,0.0001]
 
 SIZE = 1400
 ONE = 1./SIZE
@@ -11,7 +11,7 @@ EDGE = 0.05
 
 GAMMA = 1.4
 
-GRAINS = 5
+GRAINS = 10
 
 NOISE_SCALE = 0.00001
 
@@ -19,15 +19,26 @@ NOISE_SCALE = 0.00001
 def run(sand):
   from modules.walkers import Walkers
 
-  W = Walkers(
+  walkers = []
+
+  for i in range(2):
+    walkers.append(Walkers(
       SIZE,
       EDGE,
       NOISE_SCALE
-      )
+      ).run())
 
-  for dots in W.run():
-
-    sand.paint_strokes(dots[:-1,:], dots[1:,:], GRAINS)
+  while walkers:
+    new_walkers = []
+    for w in walkers:
+      try:
+        dots = next(w)
+        sand.paint_strokes(dots[:-1,:], dots[1:,:], GRAINS)
+      except Exception as e:
+        print(e)
+      else:
+        new_walkers.append(w)
+      walkers = new_walkers
 
 
 def main():
