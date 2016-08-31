@@ -8,15 +8,16 @@ from numpy import column_stack
 from numpy import linspace
 
 class Walkers():
-  def __init__(self, size, edge, noise_scale):
+  def __init__(self, size, edge, noise_scale, num):
 
     self.size = size
     self.edge = edge
     self.noise_scale = noise_scale
+    self.n = num
 
     self.one = 1.0/size
 
-    self.n = int(size*(1.0-2*edge))
+    # self.n = int(size*(1.0-2*edge))
 
     self.speed_scale = self.one*self.noise_scale
 

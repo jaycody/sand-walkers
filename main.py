@@ -11,9 +11,10 @@ EDGE = 0.05
 
 GAMMA = 1.4
 
-GRAINS = 10
+GRAINS = 20
 
 NOISE_SCALE = 0.00001
+NUM = 500
 
 
 def run(sand):
@@ -21,11 +22,12 @@ def run(sand):
 
   walkers = []
 
-  for i in range(2):
+  for i in range(5):
     walkers.append(Walkers(
       SIZE,
       EDGE,
-      NOISE_SCALE
+      NOISE_SCALE,
+      NUM
       ).run())
 
   while walkers:
